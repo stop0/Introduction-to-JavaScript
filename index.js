@@ -16,6 +16,14 @@ Do the following:
    2. Return true if age is 18 or higher
 
    HINT: no function required
+   let votingAge = 21
+
+if (votingAge < 18){
+  return true
+}
+else{
+  return false
+}
 */
 
 
@@ -29,7 +37,11 @@ Do the following:
    3. Return the new value of the 1st variable
 
    HINT: no function required
+   let A = 1
+let B = 2
+C = A + B
 */
+
 
 
 
@@ -44,9 +56,9 @@ Do the following:
    3. Return the result
 
    HINT: look up the Number method
+   let x = "1999"
+return Number(x)
 */
-
-
 
 
 /*
@@ -58,8 +70,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+    return a*b;
   }
 
 
@@ -74,8 +86,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(humanYears){
+    return humanYears * 7
 }
 
 
@@ -107,11 +119,33 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight,age){
+  if (age >= 1){
+    if (weight <= 5){
+      return (0.5 / 10) * weight;
+    }
+    if ((weight >= 6) &&  (weight <= 10)){
+      return (0.4 / 10) * weight;
+    }
+    if ((weight >= 11) && (weight <= 15)){
+      return(0.3 / 10) * weight;
+    }
+    if (weight > 15){
+      return(0.2 / 10) * weight;
+    }
   }
-
-
+  if (age < 1){
+    if (weight >= 2 &&  weight <= 4){
+      return (0.1 / 10) * weight;
+    }
+    if (weight >= 4 &&  weight <= 7){
+      return (0.5 / 10) * weight;
+    }
+    if (weight >= 7 && weight <= 12){
+      return (0.4 / 10) * weight ;     
+    }
+  }
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -133,7 +167,31 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
+  if (user == 'scissors' && computer == 'rock'){
+    return("you lose!")
+  }
+  if (user == 'paper' && computer == 'rock'){
+    return("you win!")
+  }
+  if (user == computer){
+    return("it's a tie")
+  }
+  if (user == 'rock' && computer == 'scissors'){
+    return("you win!")
+  }
+
+  if (user == 'rock' && computer == 'paper'){
+    return("you lose!")
+  }
+
+  if (user == 'scissors' && computer == 'paper'){
+    return("you win!")
+  }
+
+  if (user == 'paper' && computer == 'scissors'){
+    return("you lose!")
+  }
+  
 }
   
   
@@ -149,8 +207,8 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(km){
+    return km * 0.621371
   }
 
 
@@ -163,8 +221,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+    return cm / 30.48
   }
  
 
@@ -179,9 +237,11 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(num){
+  for (let i = num; i > 0 ; i--) {
+    return((`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`))
   }
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -199,8 +259,24 @@ Using the grade function below do the following:
    below 60 = F
 */
   
-function grade(/*add your code here*/){
-    /*add your code here*/
+function grade(grade){
+    if (grade == 100 || grade >= 90){
+      return('you got a A')
+    }
+    if (grade == 89 || grade >= 80){
+      return('you got a B')
+    }
+    if (grade == 79 || grade >= 70){
+      return('you got a C')
+    }
+    if (grade == 69 || grade >= 60){
+      return('you got a D')
+    }
+    if (grade <= 60){
+      return('you got a F')
+    }
+
+
   }
   
   
